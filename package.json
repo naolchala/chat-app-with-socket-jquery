@@ -20,6 +20,7 @@
     "socket.io-client": "^3.0.3"
   },
   "devDependencies": {
+    "parcel-bundler",
     "cssnano": "^4.1.10",
     "sass": "^1.29.0"
   }
