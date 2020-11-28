@@ -1,0 +1,180 @@
+$primaryColor: #2196f3;
+
+* {
+    font-family: poppins;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    background-color: #444444;
+
+    ::-webkit-scrollbar {
+        width: 10px;
+    }
+    ::-webkit-scrollbar-thumb{
+        transition: all .5s;
+        background-color: rgba($color: $primaryColor, $alpha: .5);
+        border-radius: 100px;
+    }
+}
+
+.App {
+    flex: 1;
+    width: 50%;
+    background-color: white;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+
+    @media screen and (max-width: 600px){
+        width: 100%;
+    }
+    #messages {
+        flex: 1;
+        overflow: auto;
+        list-style: none;
+        margin: 0;
+        padding: 20px;
+
+        li {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            
+            
+
+            span:first-child {
+                font-size: 15px;
+                background-color: rgba($color: $primaryColor, $alpha: .5);
+                padding: 10px 20px;
+                border-radius: 60px;
+            }
+
+            span:last-child {
+                font-size: 11px;
+                text-align: left;
+                padding-left: 10px;
+            }
+
+            &:last-child {
+                animation: fadeInUp .5s ease;
+            }
+
+            &.senders {
+                align-items: flex-end;
+            }
+        }
+        span {
+            display: block;
+            text-align: center;
+            font-size: 11px;
+        }
+    }
+    .appBar {
+        box-shadow: 0 2px 5px -1px #bbb;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        background-color: $primaryColor;
+        color: white;
+        height: 64px;
+        font-size: 20px;
+        padding:0 20px;
+        span {
+
+            &:first-child {
+                flex: 1;
+            }
+            &:last-child {
+                background-color: white;
+                color: #2196f3;
+                font-size: 20px;
+                padding: 0 20px ;
+            }
+        }
+    }
+    form {
+        display: flex;
+        flex-direction: row;
+        box-shadow: 0 -2px 5px -1px #bbb;
+
+        input {
+            flex: 1;
+            padding: 15px;
+            border: none;
+            outline: none;
+        }
+
+        button {
+            border: none;
+            color: white;
+            background-color: $primaryColor;
+            padding: 0 20px;
+        }
+    }
+}
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: #444444;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        * {
+            color: #8BC34A;
+            background-color: #444444;
+            outline: none;
+            display: block;
+            padding: 8px 15px;
+            margin: 5px;
+            transition: all .5s;
+        }
+        input {
+            border: 3px solid #8BC34A;
+            width: 200px;
+        }
+        button {
+            border: 3px solid #8BC34A;
+            padding: 8px 30px;
+        }
+        button:hover {
+            background-color: #455e28;
+        }
+        input:focus {
+            width: 300px;
+            transition: all .5s;
+        }
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(3px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
