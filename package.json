@@ -19,6 +19,6 @@
   "devDependencies": {
     "cssnano": "^4.1.10",
     "sass": "^1.29.0",
-    "parcel": "2.0.0-nightly.389"
+    "parcel": "^2.0.0"
   }
 }
